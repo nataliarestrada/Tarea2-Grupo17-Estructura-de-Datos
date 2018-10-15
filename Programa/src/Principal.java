@@ -5,60 +5,54 @@ public class Principal {
 	public static void main(String[] args) {
 
 
-		Electrodomesticos[] coleccion = new Electrodomesticos[15];          
-		double preciototal = 0;
+		Electrodomesticos[] coleccion = new Electrodomesticos[10];          
+		double preciototal=0;
 
-		Ejecutar(coleccion,preciototal);
+		double Total=Ejecutar(coleccion,preciototal);
 		Mostrar(coleccion);
 
-		System.out.println("Total de precios finales para todos los elementos de la coleccion: $" + preciototal);
-
-
-
+		System.out.println("TOTAL de precios finales de todos los elecrodomestico: $" + String.format("%.2f", Total));
 	}
 
-	public static void Ejecutar(Electrodomesticos[] coleccion,  double preciototal){
-		int i, num, cant;
+	public static double Ejecutar(Electrodomesticos[] coleccion,  double preciototal){
 
-		cant = 15;
+		int cant = 10;
 		Random aleatorio=new Random();
 
-		for (i = 0; i < cant; i++)
+		for (int i =0; i < cant; i++)
 		{
-			num =aleatorio.nextInt(2); 
+			int num =aleatorio.nextInt(3)+1; 
 			switch (num)
 			{
-			case 0:
+			case 1:
 				Heladera heladera = new Heladera();
-				// pausa en milisegundos 
-				Thread.sleep(14);
 				heladera.AtribBase();
-				preciototal = preciototal+heladera.PrecioFinal;
+				preciototal += heladera.PrecioFinal();
 				coleccion[i] = heladera;
 				break;
-			case 1:
+			case 2:
 				Cocina cocina = new Cocina();
-				Thread.sleep(14);
 				cocina.AtribBase();
-				preciototal = preciototal+cocina.PrecioFinal;
+				preciototal += cocina.PrecioFinal();
 				coleccion[i] = cocina;
 				break;
-			case 2:
+			case 3:
 				Lavarropa lavarropa = new Lavarropa();
-				Thread.sleep(14);
 				lavarropa.AtribBase();
-				preciototal = preciototal+lavarropa.PrecioFinal;
+				preciototal += lavarropa.PrecioFinal();
 				coleccion[i] = lavarropa;
-				break;
+				
 			}            
 		}
+		return preciototal;
 
 	}
 	public static void Mostrar(Electrodomesticos[] coleccion){
 
-        for(int i=0;i<4;i++)
+        for(int i=0;i<10;i++)
         {
             coleccion[i].Mostrar();
+            
         }          
     }
 }
