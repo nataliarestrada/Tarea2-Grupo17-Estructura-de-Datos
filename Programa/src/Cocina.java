@@ -1,7 +1,5 @@
 import java.util.Random;
 
-
-
 public class Cocina extends Electrodomesticos{
 	private int alto;
 	private int ancho;

@@ -9,6 +9,7 @@ public class Principal {
 		double preciototal=0;
 
 		double Total=Ejecutar(coleccion,preciototal);
+		System.out.println("ELECTRODOMESTICOS");
 		Mostrar(coleccion);
 
 		System.out.println("TOTAL de precios finales de todos los elecrodomestico: $" + String.format("%.2f", Total));

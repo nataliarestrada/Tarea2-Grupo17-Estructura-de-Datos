@@ -37,9 +37,7 @@ public class Lavarropa extends Electrodomesticos {
 			return preciofinal;
 		
 	}
-	
-	
-	
+		
 	public  void Mostrar()
 	{
         System.out.println("Lavarropas");

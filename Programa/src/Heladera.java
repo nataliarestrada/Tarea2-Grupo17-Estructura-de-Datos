@@ -1,7 +1,5 @@
 import java.util.Random;
 
-
-
 public class Heladera extends Electrodomesticos {
 	private Tipos tiporefr;
 	private int caprefr;
